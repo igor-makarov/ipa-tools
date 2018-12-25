@@ -32,3 +32,13 @@ This will SCP the IPAs from guest to `./apps`
 ./takeout.sh
 ```  
 
+## Extract URI schemes from IPAs
+Unzip all the IPAs in `./apps`:
+```
+./extract_plist.sh
+```
+Go over all the .plist files in `./apps` and flatten their ':CFBundleURLTypes:$i:CFBundleURLSchemes:$j' to `stdout`
+```
+./extract_uri_schemes.sh
+```
+

@@ -25,6 +25,8 @@ vagrant up
 ```
 ./download.sh "<app URL>"
 ```
+The script is a modified version of [cherrypick.js](https://github.com/attheodo/cherrypick), a JXA-based iTunes downloader.  
+I've removed some of the code because it wasn't being extremely stable. The downside is that you don't get indication that download has completed.
 
 ## Take apps out of guest VM
 This will SCP the IPAs from guest to `./apps`

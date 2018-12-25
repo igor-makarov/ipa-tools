@@ -15,6 +15,8 @@ function run(args) {
   itunes = Application("System Events").applicationProcesses['iTunes']
   openSignInScreen();
   fillUsernameAndPassword(args[0], args[1])
+  delay(10)
+  agreeToTerms()
 }
 
 function printHelp() {
@@ -50,23 +52,23 @@ function retry(func) {
   }
 }
 
-// function agreeToTerms() {
-//   retry(function() {
-//       // Get an array of all UI elements in iTunes window.
-//       uiElems = Application("System Events").applicationProcesses['iTunes'].windows[0].entireContents()
+function agreeToTerms() {
+  retry(function() {
+      // Get an array of all UI elements in iTunes window.
+      uiElems = Application("System Events").applicationProcesses['iTunes'].windows[0].entireContents()
 
-//       // Find all buttons whose description contains 'Agree'.
-//       btns = uiElems.filter(function(element) {
-//         try {
-//           return element.role() == 'AXButton' && element.title().match(/Agree/) 
-//         } catch (e) {}
-//       })
+      // Find all buttons whose description contains 'Agree'.
+      btns = uiElems.filter(function(element) {
+        try {
+          return element.role() == 'AXButton' && element.title().match(/Agree/) 
+        } catch (e) {}
+      })
 
-//       // Click on the 1st button found.
-//       btns[0].click()
+      // Click on the 1st button found.
+      btns[0].click()
 
-//   });
-// }
+  });
+}
 
 function openSignInScreen() {
   retry(function() {

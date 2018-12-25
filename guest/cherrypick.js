@@ -86,25 +86,9 @@ var downloadApplication = function() {
                 } catch (e) {}
 			})
 
-			// Split the description
-			let btnDesc = btns[0].description().split(",");
+            btns[0].click()
 
-			// Get the full app name, and remove the " " in front
-			var fullAppName = btnDesc[1].slice(1);
-
-			//var fullAppName = btnDesc[2].slice(1);
-            console.log('[+] Found application: "' + fullAppName +'". Downloading...');
-
-            // Get the app name (reduced for file monitoring) for later
-            //appName = fullAppName.split(" ")[0].slice(0, -1);
-            if (fullAppName.indexOf(":") > -1 ) {
-                appName = fullAppName.split(":")[0].trim();
-            } else {
-                appName = fullAppName.split(" ")[0].trim();
-            }
-
-			// Click on the 1st button found.
-			btns[0].click()
+            console.log('[+] Downloading...');
 
             break;
 

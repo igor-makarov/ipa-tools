@@ -1,2 +1,3 @@
 #!/bin/bash
-vagrant ssh -c "./scripts/guest/cherrypick.js \"$1\""
+
+./base_runner.sh "./scripts/guest/cherrypick.js \"$1\""

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./base_runner.sh "./scripts/guest/cherrypick.js \"$1\""
+./base_runner.sh "guest/cherrypick.js \"$1\""

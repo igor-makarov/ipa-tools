@@ -1,2 +1,3 @@
 #!/bin/bash
-vagrant ssh -c "./scripts/guest/itunes-signin.js \"$1\" \"$2\""
+
+./base_runner.sh "guest/itunes-signin.js \"$1\" \"$2\""
